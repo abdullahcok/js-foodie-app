@@ -1,2 +1,2 @@
 # js-foodie-app
-meal finder api with bts4
+meal finder api with using bts4
