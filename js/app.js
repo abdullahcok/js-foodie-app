@@ -1,7 +1,7 @@
-const search = document. getElementById('search');
-const submit = document. getElementById('submit');
-const random = document. getElementById('search');
-const mealsEl = document. getElementById('meals')
+const search = document.getElementById('search');
+const submit = document.getElementById('submit');
+const random = document.getElementById('search');
+const mealsEl = document.getElementById('meals')
 
 resultHeading = document.getElementById('result-heading');
 single_mealEl = document.getElementById('single-meal');

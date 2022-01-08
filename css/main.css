@@ -1,35 +1,47 @@
-@import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap");
-
-:root {
-  --mainPink: #ef7998;
-  --mainYellow: rgb(249, 228, 148);
-  --mainWhite: #fff;
-  --darkGrey: #1a1a1a;
-  --mainBlack: #000;
-  --yellowTrans: rgba(249, 228, 148, 0.5);
-  --mainGrey: rgb(238, 238, 238);
-  --box-shadow: 0 2px 4px rgba(0,0,0, 1);
-}
-
-*{
+* {
   box-sizing: border-box;
 }
 
 body {
-  background: var(--darkGrey);
-  color: var(--mainGrey);
+  background: #434343;
+  color: #fff;
 }
 
-.container{
-  margin: 40px auto;
+.container {
+  margin: 30px auto;
   width: 300px;
   height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background: #2d2d2d;
-  border-radius: 10px;
+  border-radius: 5px;
   box-shadow: var(--box-shadow);
 }
 
-.flex{
+.container header {
+  width: 300px;
+  background: #1d1d1d;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  padding: 5px 30px;
+}
+
+.container header .co {
+  float: left;
+  font-size: 20px;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.container header .logo {
+  width: 50px;
+  padding: 10px 40px;
+  float: right;
+  border-radius: 3px;
+}
+
+.container section {
   padding: 10px 0;
   text-align: center;
   flex-direction: column;
@@ -37,83 +49,86 @@ body {
   justify-content: center;
 }
 
-.flex h1{
-  text-align: center;
-  padding-top: 60px;
+.container section h6 {
+  text-align: left;
+  padding-top: 10px;
+  font-size: 19px;
 }
 
-input,button{
-  border: 1px solid var(--mainWhite);
+.container section input, .container section button {
+  border: 1px solid #fff;
   border-top-left-radius: 3px;
-  border-bottom-left-radius: 3px;
+  border-top-right-radius: 3px;
   font-size: 14px;
   padding: 8px 10px;
 }
 
-input[type='text']{
+.container section input[type='text'] {
   width: 210px;
-  box-shadow: var(--box-shadow);
+  box-shadow: 0 2px 4px black;
 }
 
-.search-button{
+.container section .search-button {
   cursor: pointer;
   border-left: 0;
   border-radius: 0;
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
-  box-shadow: var(--box-shadow);
+  box-shadow: 0 2px 4px black;
 }
 
-.results{
+.results {
   text-align: center;
   justify-content: between;
 }
 
-.meals{
+.meals {
   display: grid;
-  grid-template-columns: repeat(4,1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 10px;
   margin-top: 30px;
 }
 
-.meal{
+.meal {
   cursor: pointer;
   position: relative;
-  height: 90px;
-  width: 75px;
+  height: 60px;
+  width: 60px;
   text-align: center;
 }
 
-.meal img{
+.meal img {
   width: 100%;
   height: 100%;
   border: 1px var(--mainGrey) solid;
   border-radius: 3px;
 }
 
-.meal-info{
+.meal:hover .meal-info {
+  opacity: 1;
+}
+
+.meal-info {
   position: absolute;
-  top:0;
+  top: 0;
   left: 0;
   height: 100%;
   width: 100%;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
   transition: opacity 0.3s ease-in;
   opacity: 0;
   padding: 10px;
+  font-size: 10px;
 }
 
-.meal:hover .meal-info{
-  opacity: 1;
-}
-
-.single-meal{
+.single-meal {
   margin: 30px auto;
   width: 70%;
 }
+
 .single-meal img {
   width: 300px;
   margin: 15px;
@@ -121,15 +136,8 @@ input[type='text']{
   border-radius: 2px;
 }
 
-.single-meal-info {
-  margin: 20px;
-  padding: 10px;
-  border: 2px #e09850 dashed;
-  border-radius: 5px;
-}
-
 .single-meal p {
-  margin: o;
+  margin: 0;
   letter-spacing: 0.5px;
   line-height: 1.5;
 }
@@ -145,8 +153,15 @@ input[type='text']{
   background-color: #fff;
   display: inline-block;
   color: #2d2013;
-  font-size: 12px;
+  font-size: 5px;
   font-weight: bold;
   padding: 5px;
   margin: 0 5px 5px 0;
+}
+
+.single-meal-info {
+  margin: 20px;
+  padding: 10px;
+  border: 2px #e09850 dashed;
+  border-radius: 5px;
 }
