@@ -1,4 +1,5 @@
 @import 'colors';
+@import 'mixins';
 
 *{
   box-sizing: border-box;
@@ -14,8 +15,7 @@ body{
   width: 300px;
   height: 500px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  @include display();
   background: $dgrey;
   border-radius: 5px;
   box-shadow: var(--box-shadow);
@@ -25,8 +25,7 @@ body{
   header{
     width: 300px;
     background: $black;
-    border-top-right-radius: 5px;
-    border-top-left-radius: 5px;
+    @include bt-radius();
     padding: 5px 30px;
 
     .co{
@@ -47,8 +46,7 @@ body{
   section{
     padding: 10px 0;
     text-align: center;
-    flex-direction: column;
-    align-items: center;
+    @include display();
     justify-content: center;
 
     h6{
@@ -60,8 +58,7 @@ body{
 
     input, button{
       border: 1px solid $white;
-      border-top-left-radius: 3px;
-      border-top-right-radius: 3px;
+      @include bt-radius();
       font-size: 14px;
       padding: 8px 10px;
     }
@@ -85,15 +82,16 @@ body{
 }
 
   .results {
-	text-align: center;
-	justify-content: between;
-}
+  	text-align: center;
+  	justify-content: between;
+  }
   .meals {
 	display: grid;
 	grid-template-columns: repeat(3,1fr);
 	grid-gap: 10px;
 	margin-top: 30px;
-}
+  }
+
   .meal {
   	cursor: pointer;
   	position: relative;

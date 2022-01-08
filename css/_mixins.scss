@@ -1,0 +1,9 @@
+@mixin bt-radius{
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+@mixin display(){
+  flex-direction: column;
+  align-items: center;
+}
